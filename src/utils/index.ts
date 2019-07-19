@@ -28,11 +28,11 @@ export const routeStrategy = async (req) => {
   // using service_01 as default baseUrl to one of the microservice system to enable testing.
   // this should have been an exception thrown or bad request if `serviceId` is not present in header request.
   const baseUrl = process.env[headers.serviceId || 'SERVICE_01'];
-  console.log({ method, baseUrl });
-  const url = baseUrl + originalUrl + serialize(query);
+  const url = (baseUrl + originalUrl + serialize(query)).trim();
+  console.log({ method, baseUrl, url, headers });
   const statusCode = HttpStatus.INTERNAL_SERVER_ERROR;
   try {
-    const config = { headers };
+    const config = {};
     let res;
     switch (method.toUpperCase()) {
       case 'POST':
@@ -44,10 +44,10 @@ export const routeStrategy = async (req) => {
       case 'PATCH':
         return await axios.patch(url, body || {}, config);
       case 'DELETE':
-        res = (await axios.delete(url, config));
+        res = await axios.delete(url, config);
         break;
       case 'GET':
-        res = (await axios.get(url, config));
+        res = await axios.get(url, config);
         break;
       default:
         return { statusCode, message: 'UNKNOWN METHOD', data: null };
