@@ -124,7 +124,7 @@ The only alternative tools I think is best if we are more concerned about high l
 ##### Limiting Factor
 ```$xslt
 Due to time and load of work at work. I took less than 24hrs to build to this stage of the app.
-So, I was unable to do the following and will appreciate if more time can be given.
+So, I was unable to do the followings.
 1. Docker for containerization.
 2. Node Clustering Implementation.
 3. Test Cases.
