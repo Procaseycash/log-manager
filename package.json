@@ -7,7 +7,7 @@
   "scripts": {
     "build:app": "tsc -p tsconfig.build.json",
     "build": "webpack",
-    "heroku-postbuild": "rm -rf dist && export NODE_ENV=development && tsc -p tsconfig.build.json",
+    "heroku-postbuild": "rm -rf dist && export NODE_ENV=staging && tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "ts-node -r tsconfig-paths/register src/main.ts",
     "start:dev": "nodemon",
