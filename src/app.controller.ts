@@ -9,8 +9,8 @@ export class AppController {
   }
 
   /**
-   * This is where all requests is directed to relaying on route strategy
-   * request is process down to the calling microService while relaying on serviceId in header request.
+   * This is where all requests is directed to relying on route strategy
+   * request is process down to the calling microService while relying on serviceId in header request.
    * All other api call are for test purposes
    * @param res
    * @param req
